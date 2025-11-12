@@ -1,0 +1,29 @@
+# 🚀 COPY THIS → PASTE INTO AI AGENT → DEPLOY
+
+Build complete Next.js 14 production app "MeauxPhotos" for Vercel project prj_66xE2dSIjXmhLLEEv1nDZFhkVmoj at meauxphotos.vercel.app. Image optimization + social media management platform for 3 brands (Meauxbility, Inner Animals, iAutodidact).
+
+**TECH:** Next.js 14 App Router, TypeScript, Tailwind, shadcn/ui, Cloudflare R2 (@aws-sdk/client-s3), Supabase (auth+DB), Sharp
+
+**FEATURES:** Dashboard (stats/quick actions), Drag-drop upload (auto WebP via Sharp), Asset library (search/filter/copy URLs), Social scheduler (Instagram/Facebook/TikTok/LinkedIn/YouTube/Snapchat multi-post), Team auth (roles/invites), Analytics (post performance/storage)
+
+**R2:** ACCESS_KEY=914b9e2c6f3310295d94a46df9180156, SECRET=a3dfb3efe4b66f734953f9ec35aa0611cd047e655d380a4cfeabc23befb75b90, ENDPOINT=https://ede6590ac0d2fb7daf155b35653457b2.r2.cloudflarestorage.com, BUCKET=meauxaccess-bucket, PATH=/brand/images/YYYY/MM/file.webp
+
+**SUPABASE TABLES:** users, team_members, brands, social_accounts(platform/tokens), assets(r2_path/cdn_url/tags[]), scheduled_posts(platforms[]/scheduled_for/status)
+
+**DESIGN:** Primary=#1F97A9, Meauxbility=#FF6B00, Fixed sidebar 280px, Inter font, Glass cards (bg-white/80 backdrop-blur), Gradients
+
+**UPLOAD FLOW:** File→Sharp(resize 1920px, WebP 85%)→R2 PutObject→Supabase→CDN URL
+
+**SOCIAL FLOW:** Compose→Select assets→Caption→Toggle platforms→Schedule→Server Action posts→Save analytics. OAuth per platform (Meta Graph, TikTok API, LinkedIn API, YouTube Data v3)
+
+**FILE STRUCTURE:** /app: dashboard,upload,library,schedule,analytics,team,settings pages + /api/upload,/api/social routes. /components: ui(shadcn),dashboard,upload,library,schedule. /lib: supabase,r2,social helpers
+
+**DEPS:** @supabase/supabase-js @aws-sdk/client-s3 sharp react-dropzone date-fns lucide-react recharts zustand
+
+**CRITICAL:** Use Server Actions (NOT API routes for mutations), shadcn/ui only, TypeScript types, RLS in Supabase, OAuth each platform, Server-side validation, Optimistic UI
+
+**ENV VARS:** R2 creds above + NEXT_PUBLIC_SUPABASE_URL/ANON_KEY + SUPABASE_SERVICE_ROLE_KEY + META_APP_ID/SECRET + TIKTOK/LINKEDIN/YOUTUBE client keys
+
+**VERCEL:** Framework=Next.js, Build=npm run build, Output=.next, Node=20.x
+
+BUILD FULL WORKING APP. ZERO PLACEHOLDERS. PRODUCTION-READY. COMPLETE SOCIAL INTEGRATIONS. DEPLOY NOW.
